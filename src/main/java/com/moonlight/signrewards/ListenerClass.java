@@ -9,8 +9,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import static org.bukkit.block.sign.Side.FRONT;
-
 public class ListenerClass implements Listener {
     private final SignRewards plugin;
     private final RewardManager rewardManager;
@@ -54,7 +52,12 @@ public class ListenerClass implements Listener {
                         RewardSign.Reward reward = rewardSign.chooseReward();
                         ItemStack rewardItem = new ItemStack(Material.matchMaterial(reward.getItem()), reward.getQuantity());
                         player.getInventory().addItem(rewardItem);
-                        player.sendMessage("You traded " + rewardSign.getCostQuantity() + " " + rewardSign.getCostItem() + " for " + reward.getQuantity() + " " + reward.getItem());
+
+                        // Get localized item names using the utility method
+                        String costItemName = LocalizationUtil.getItemLocalizedName(player, Material.matchMaterial(rewardSign.getCostItem()));
+                        String rewardItemName = LocalizationUtil.getItemLocalizedName(player, Material.matchMaterial(reward.getItem()));
+
+                        player.sendMessage("You traded " + rewardSign.getCostQuantity() + " " + costItemName + " for " + reward.getQuantity() + " " + rewardItemName);
                         return;
                     } else {
                         player.sendMessage("You don't have enough items to trade.");
