@@ -1,0 +1,49 @@
+# Determines the item that an admin has to have in their hand to convert a normal sign to a reward sign
+reward_maker: "minecraft:stick"
+
+# Each sign has a title, its own cost and a list of rewards
+# Put the rewards you want here, these are just some examples
+reward_sign:
+    # The title determines what the sign must have on its first line to be converted to a reward sign
+  - title: "0"
+    # If the sign should have the glowing effect from right-clicking it with a glowing ink sack
+    sign_glow: "true"
+    # Sign content determines the new content that the sign will have when converted to a reward sign
+    sign_content:
+      line1: "§6==============="
+      line2: "§9Change your"
+      line3: "§9diamonds here"
+      line4: "§6==============="
+    # Cost determines the item the player must have in the hand to be able to use the reward
+    cost:
+      quantity: "3"
+      item: "minecraft:diamond"
+    # These are the possible rewards to give to the player, weight represents the chance of getting the item
+    # Bigger the weight = More chance to get the item
+    rewards:
+      - quantity: "10"
+        item: "minecraft:iron_ingot"
+        weight: "50"
+      - quantity: "5"
+        item: "minecraft:gold_ingot"
+        weight: "15"
+      - quantity: "1"
+        item: "minecraft:gold_ingot"
+        weight: "1"
+  - title: "1"
+    sign_glow: "true"
+    sign_content:
+      line1: "§6==============="
+      line2: "§9Change your"
+      line3: "§9emeralds here"
+      line4: "§6==============="
+    cost:
+      quantity: "5"
+      item: "minecraft:emerald"
+    rewards:
+      - quantity: "1"
+        item: "minecraft:iron_ingot"
+        weight: "70"
+      - quantity: "2"
+        item: "minecraft:diamond_sword"
+        weight: "30"

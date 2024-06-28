@@ -1,0 +1,6 @@
+com\moonlight\signrewards\RewardManager.class
+com\moonlight\signrewards\ConfigManager.class
+com\moonlight\signrewards\RewardSign$Reward.class
+com\moonlight\signrewards\RewardSign.class
+com\moonlight\signrewards\SignRewards.class
+com\moonlight\signrewards\ListenerClass.class
